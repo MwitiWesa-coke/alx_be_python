@@ -1,18 +1,41 @@
-task = input("Enter your task: ")
-priority = input("Priority (high/medium/low): ")
-time_bound = input("Is it time-bound? (yess/no): ")
+# daily_reminder.py
 
+# Ensure user gives non-empty task
+while True:
+    task = input("Enter your task: ").strip()
+    if task:
+        break
+    print("Task cannot be empty. Please enter your task.")
+
+# Ensure user gives valid priority
+while True:
+    priority = input("Priority (high/medium/low): ").lower().strip()
+    if priority in ("high", "medium", "low"):
+        break
+    print("Please enter priority as 'high', 'medium', or 'low'.")
+
+# Ask if task is time-bound
+while True:
+    time_bound = input("Is it time-bound? (yes/no): ").lower().strip()
+    if time_bound in ("yes", "no"):
+        break
+    print("Please answer with 'yes' or 'no'.")
+
+# Use match case for priority handling
 match priority:
     case "high":
-        message = f"{task} is a high priority task that requires immediate attention today!"
-        case "medium":
-            message = f"{task} is a medium priority that requires your action after high priority tasks are finished."
-            case "low":
-                message = f"{task} is a low priority task. Consider completing it when you have free time."
-                case _:
-                    message = f"{task} had an UNKOWNK priority. Please check."
+        message = f"Reminder: '{task}' is a high priority task."
+    case "medium":
+        message = f"Note: '{task}' is a medium priority task. Handle it after high priority ones."
+    case "low":
+        message = f"Note: '{task}' is a low priority task. Consider completing it when you have free time."
+    case _:
+        message = f"Task '{task}' has an unknown priority."
 
-                    if time_bound == "yes":
-                        message += "This task requires imediate attention today!"
+# Use if to adjust for time sensitivity
+if time_bound == "yes":
+    message += " This task requires immediate attention today!"
 
-                        print(message)
+# Print the customized reminder
+print(message)
+
