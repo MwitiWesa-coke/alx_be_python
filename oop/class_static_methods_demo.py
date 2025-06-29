@@ -9,5 +9,5 @@ class Calculator:
     @classmethod
     def multiply(cls, a, b):
         """Class method to multipy two numbers, prints class attribute."""
-        print(f"Calculation type: {cls.calculations_type}")
+        print(f"Calculation type: {cls.calculation_type}")
         return a * b
