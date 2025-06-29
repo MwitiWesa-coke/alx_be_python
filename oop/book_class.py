@@ -1,4 +1,4 @@
-
+class Book:
     selt.title = title
     self.author = author
     self.year = year
