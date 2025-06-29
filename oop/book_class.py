@@ -1,5 +1,4 @@
-class book:
-    def __init__(self, title, author, year)
+
     selt.title = title
     self.author = author
     self.year = year
