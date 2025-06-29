@@ -1,7 +1,7 @@
 def safe_divide(numerator, denominator):
     try:
         num = float(numerator)
-        den float(denominator)
+        den = float(denominator)
 
         try:
             result = num / den
