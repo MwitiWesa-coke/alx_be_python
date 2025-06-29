@@ -6,7 +6,7 @@ class Calculator:
         """static method to add two numbers"""
         return a + b
 
-    @clasmethod
+    @classmethod
     def multiply(cls, a, b):
         """Class method to multipy two numbers, prints class attribute."""
         print(f"Calculation type: {cls.calculations_type}")
